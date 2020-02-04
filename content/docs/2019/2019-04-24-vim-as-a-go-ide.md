@@ -303,15 +303,13 @@ In order to follow this setup, you need to complete following.
     [coc.nvim's
     recommendations](https://github.com/neoclide/coc.nvim/tree/3bdfdd2a86046d7b0938da6e0f940ec39f999bca#example-vim-configuration)._
 
-1. Copy the following to tell `vim-go` to not map `gd` as its shortcut for go to definition.
+1. Copy the following to tell `vim-go` to disable a few features that are handled by `coc.nvim`.
 
     ```vimrc
-    " disable vim-go :GoDef short cut (gd)
-    " this is handled by LanguageClient [LC]
-    let g:go_def_mapping_enabled = 0
+    let g:go_def_mapping_enabled = 0 	" disable `gd`. coc.nvim maps `gd`.
+    let g:go_doc_keywordprg_enabled = 0 " disable `K`. coc.nvim provides `K`. 
+    let g:go_gopls_enabled = 0 		" disable `gopls`. coc.nvim initializes `gopls` server.
     ```
-
-	  _This is disabled to allow `coc.vim` to do the `gd` resolution._
 
 1. Save `init.vim` and exit Vim.
 
